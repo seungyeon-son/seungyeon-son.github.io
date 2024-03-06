@@ -1,26 +1,33 @@
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Archive from "./pages/archive/ArchivePage";
+import Main from "./pages/main/MainPage";
+
+function Home() {
+  return <h2>Home</h2>;
+}
+
 function App() {
   return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/archive">Archive</Link>
-          </li>
-          <li>
-            <Link to="/">Work</Link>
-          </li>
-          <li>
-            <Link to="/">Contact</Link>
-          </li>
-        </ul>
-      </nav>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/archive">Archive</Link>
+            </li>
+          </ul>
+        </nav>
 
-      <Router>
-        <Route path="/archive" component={Archive} />
-      </Router>
-    </>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/archive" element={<Archive />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

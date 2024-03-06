@@ -8,24 +8,26 @@ function Archive() {
   const { archivetId } = useParams();
 
   const ArchiveListMap = ArchiveList.map((archive) => {
-    return (
-      <ListItem>
-        <a href={archive.archiveLink} target="_blank" rel="noreferrer">
-          <ArchiveCover>
-            <ArchiveCoverImg archiveImg={archive.archiveImg} />
-            img
-          </ArchiveCover>
-          <div className="con-main-title">{archive.archiveTitle}title</div>
-          <div className="con-main-content">{archive.archiveContent}content</div>
-          <span className="con-sub-name">{archive.archiveTag.tag1}tag</span>
-          <span className="con-sub-date">{archive.archiveDate}date</span>
-        </a>
-      </ListItem>
-    );
     if (!archive) {
       return <div>archive not found</div>;
     }
+
+    return (
+      <ListItem key={archive.archiveId}>
+        <a href={archive.archiveLink} target="_blank" rel="noreferrer">
+          <ArchiveCover>
+            <ArchiveCoverImg archiveImg={archive.archiveImg} />
+            <img src={archive.archiveImg} alt="Archive Cover" />
+          </ArchiveCover>
+          <div className="con-main-title">{archive.archiveTitle}</div>
+          <div className="con-main-content">{archive.archiveContent}</div>
+          <span className="con-sub-name">{archive.archiveTag.tag1}</span>
+          <span className="con-sub-date">{archive.archiveDate}</span>
+        </a>
+      </ListItem>
+    );
   });
+
   return (
     <React.Fragment>
       <div>{ArchiveListMap}</div>
@@ -33,7 +35,7 @@ function Archive() {
   );
 }
 
-const ArchiveCoverImg = styled.div<{ archiveImg: string }>`
+const ArchiveCoverImg = styled.div`
   background: url(${({ archiveImg }) => archiveImg}) no-repeat center / cover;
 `;
 
