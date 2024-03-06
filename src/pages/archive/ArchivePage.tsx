@@ -1,9 +1,11 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { ArchiveList } from "./constants";
 import styled from "styled-components";
 
 function Archive() {
   const subPageName = "Archive";
+  const { archivetId } = useParams();
 
   const ArchiveListMap = ArchiveList.map((archive) => {
     return (
@@ -24,13 +26,18 @@ function Archive() {
       return <div>archive not found</div>;
     }
   });
-  return <>{ArchiveListMap}</>;
+  return (
+    <React.Fragment>
+      <div>{ArchiveListMap}</div>
+    </React.Fragment>
+  );
 }
 
-const ArchiveCoverImg = styled.div<{ blogImg: string }>`
-  background: url(${({ blogImg }) => blogImg}) no-repeat center / cover;
+const ArchiveCoverImg = styled.div<{ archiveImg: string }>`
+  background: url(${({ archiveImg }) => archiveImg}) no-repeat center / cover;
 `;
 
 const ArchiveCover = styled.div``;
 const ListItem = styled.li``;
+
 export default Archive;

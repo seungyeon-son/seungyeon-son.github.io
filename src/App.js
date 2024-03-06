@@ -1,18 +1,26 @@
-// App.js
-
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Archive from "./components/Archive";
-
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Archive from "./pages/archive/ArchivePage";
 function App() {
   return (
-    <Router>
-      <div>
-        <Switch>
-          <Route path="/" exact component={Archive} />
-        </Switch>
-      </div>
-    </Router>
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/archive">Archive</Link>
+          </li>
+          <li>
+            <Link to="/">Work</Link>
+          </li>
+          <li>
+            <Link to="/">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Router>
+        <Route path="/archive" component={Archive} />
+      </Router>
+    </>
   );
 }
 
