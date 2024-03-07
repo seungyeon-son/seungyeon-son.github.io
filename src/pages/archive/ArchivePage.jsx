@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import { useParams, Link } from "react-router-dom";
 import { ArchiveList } from "./constants";
 import styled from "styled-components";
@@ -6,7 +7,7 @@ import ArchiveDetail from "./ArchiveDetail";
 
 function Archive() {
   const subPageName = "Archive";
-  const { archivetId } = useParams();
+  const { archivetId } = uuidv4();
 
   const ArchiveListMap = ArchiveList.map((archive) => {
     if (!archive) {

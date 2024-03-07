@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const ArchiveList = [
   {
+    archiveId: uuidv4(),
     archiveTitle: "Project name 01",
     archiveContent: "Project context",
     archiveTag: {
@@ -13,7 +14,7 @@ export const ArchiveList = [
     archiveImg: "/img/archive/example.jpg",
   },
   {
-    archiveLink: "",
+    archiveId: uuidv4(),
     archiveTitle: "Project name 02",
     archiveContent: "Project context",
     archiveTag: {
