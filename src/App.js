@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Archive from "./pages/archive/ArchivePage";
+import ArchiveDetail from "./pages/archive/ArchiveDetail";
 import Main from "./pages/main/MainPage";
 
 function Home() {
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/archive" element={<Archive />} />
+          <Route path="/archive/:id" element={<ArchiveDetail />} />
         </Routes>
       </div>
     </Router>
