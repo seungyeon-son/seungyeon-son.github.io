@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Panel, PanelWrap } from "./MainStyle";
 
-function Main() {
+function MainPage() {
   return (
     <PanelWrap>
       <Panel>
@@ -15,18 +16,4 @@ function Main() {
   );
 }
 
-export default Main;
-const PanelWrap = styled.div`
-  background: no-repeat center/100% url("../../../images/main/background.png");
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  color: #fff;
-`;
-const Board = styled.div`
-  width: calc(100% - 96px);
-  height: calc(100% - 48px);
-  border-radius: 12px;
-  box-sizing: border-box;
-`;
-const Panel = styled.div``;
+export default MainPage;

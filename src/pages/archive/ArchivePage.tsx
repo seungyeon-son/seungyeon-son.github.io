@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ArchiveList } from "./constants";
 import styled from "styled-components";
 
-function Archive() {
+function ArchivePage() {
   const subPageName = "Archive";
   const { archivetId } = useParams();
 
@@ -16,8 +16,7 @@ function Archive() {
       <ListItem key={archive.archiveId}>
         <a href={archive.archiveLink} target="_blank" rel="noreferrer">
           <ArchiveCover>
-            <ArchiveCoverImg archiveImg={archive.archiveImg} />
-            <img src={archive.archiveImg} alt="Archive Cover" />
+            <ArchiveCoverImg />
           </ArchiveCover>
           <div className="con-main-title">{archive.archiveTitle}</div>
           <div className="con-main-content">{archive.archiveContent}</div>
@@ -35,11 +34,9 @@ function Archive() {
   );
 }
 
-const ArchiveCoverImg = styled.div`
-  background: url(${({ archiveImg }) => archiveImg}) no-repeat center / cover;
-`;
+const ArchiveCoverImg = styled.img``;
 
 const ArchiveCover = styled.div``;
 const ListItem = styled.li``;
 
-export default Archive;
+export default ArchivePage;
