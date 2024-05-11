@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@pages/*": ["src/pages/*"],
+      "@components/*": ["src/components/*"]
+    },
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "jsx": "react"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "plugins": ["@babel/plugin-transform-modules-commonjs"]
+}
